@@ -1,0 +1,15 @@
+[params]
+  DateForm = "Jan 2, 2006"
+  Description = "Hugo meets CSS Grid"
+  Author = "Gerton ten Ham"
+  postSummariesFrontPage = 5 #Number of post summaries to show on front page, comment out to allow default(4)
+
+[[params.social]]
+  title = "github"
+  url = ""
+[[params.social]]
+  title = "facebook"
+  url = ""
+[[params.social]]
+  title = "linkedin"
+  url = ""
