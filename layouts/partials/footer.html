@@ -1,0 +1,39 @@
+        </main><!-- #main -->
+        <aside id="secondary" class="widget-area" role="complementary">
+
+        </aside>
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <nav class="social-menu">
+                <ul>
+                    {{ if isset .Site.Params "social" }}
+                    {{ range .Site.Params.social }}
+                    <li>
+                        <a href="{{ .url }}">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-{{ .title }} fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+            </nav>
+            <div class="site-info">
+                <span class="sitemeta">
+                    <a rel="home" href="{{ .Site.BaseURL }}">{{ .Site.Copyright }}</a>                        
+                </span>
+                <span class="sitemeta">
+                    Theme: <a href="https://github.com/mor10/kuhn" rel="nofollow">Kuhn</a>                        
+                </span>
+                
+            </div><!-- .site-info -->
+        </footer>
+    </div><!-- #page -->
+
+    <!-- jQuery -->
+    <script src="{{ .Site.BaseURL }}/js/jquery.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ .Site.BaseURL }}/js/navigation.js"></script>
+</body>
+</html>

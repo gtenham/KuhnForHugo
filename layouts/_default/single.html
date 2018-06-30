@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+
+<article class="page">
+    {{ partial "categories.html" .}}
+    <header class="entry-header">
+        <h1 class="entry-title">{{ .Title }}</h1>
+    </header>
+    <div class="entry-meta">
+        <span>{{ .Description }}</span>
+    </div>
+    <div class="entry-content">
+        {{ .Content }}
+    </div>
+    <footer class="entry-footer">
+        
+    </footer><!-- .entry-footer -->
+</article>
+
+{{ partial "footer.html" . }}

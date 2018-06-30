@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ if .Params.LanguageCode }}{{ .Params.LanguageCode }}{{ else }}{{ .Site.LanguageCode }}{{ end }}">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ end }}">
+    <meta name="author" content="{{ if .Params.authors }}{{ .Params.authors }}{{ else if .Site.Params.Author }}{{.Site.Params.Author}}{{ end }}">
+    <meta name="keywords" content="{{ if .Keywords }}{{ delimit .Keywords ", " }}{{ end }}">
+
+	<title>{{ if not .IsHome }}{{ .Title }} -- {{ end }}{{ .Site.Title }}</title>
+	
+	{{ if .RSSLink }}
+    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+	{{ end }}
+	
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<link href="{{ .Site.BaseURL }}/css/base.css" rel="stylesheet">
+</head>
+<body {{ if not .IsPage }}class="archive-view"{{ end }}>
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#main">{{ i18n "skip_to_content" }}</a>
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding">
+				{{ if not .IsPage }}
+				<h1 class="site-title"><a rel="home" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+				{{ else }}
+				<p class="site-title"><a rel="home" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></p>
+				{{ end }}
+
+				{{ with .Site.Params.Description }}<p class="site-description">{{ . }}</p>{{ end }}
+			</div>
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+				<ul>
+					{{ range .Site.Menus.main }}
+                    <li>
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                    {{end}}
+				</ul>
+			</nav>
+		</header><!-- #masthead -->
+		<main id="main" class="site-main" role="main">

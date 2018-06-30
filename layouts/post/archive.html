@@ -1,0 +1,14 @@
+<article class="post">
+    <header class="entry-header">
+        {{ partial "categories.html" .}}
+        <h2 class="entry-title">
+            <a href="{{ .Permalink }}" rel="bookmark">{{ .Title }}</a>
+        </h2>
+    </header>
+    <div class="entry-meta">
+        {{ partial "meta.html" .}}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "tags.html" .}}
+    </footer><!-- .entry-footer -->
+</article>

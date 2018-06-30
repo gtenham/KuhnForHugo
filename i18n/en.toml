@@ -1,0 +1,20 @@
+[all_articles]
+other = "All Articles"
+[posts_navigation]
+other = "Posts navigation"
+[skip_to_content]
+other = "Skip to content"
+[written_by]
+other = "Written by"
+[published]
+other = "Published"
+[min_read]
+other = "min read"
+[tagged]
+other = "Tagged"
+[goto]
+other = "Goto"
+[newer_posts]
+other = "Newer Posts"
+[older_posts]
+other = "Older Posts"

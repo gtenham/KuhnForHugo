@@ -1,0 +1,21 @@
+<article class="post">
+    {{ if .Params.featuredThumbnail }}
+    <figure class="featured-image">
+        <a href="{{ .Permalink }}" rel="bookmark">
+            <img src="{{ .Params.featuredThumbnail }}" alt="{{i18n "goto"}} {{ .Title }}" />
+        </a>
+    </figure>
+    {{ end }}
+    <header class="entry-header">
+        {{ partial "categories.html" .}}
+        <h2 class="entry-title">
+            <a href="{{ .Permalink }}" rel="bookmark">{{ .Title }}</a>
+        </h2>
+    </header>
+    <div class="entry-meta">
+        {{ partial "meta.html" .}}
+    </div>
+    <div class="entry-content">
+        {{ .Summary }}
+    </div>
+</article>

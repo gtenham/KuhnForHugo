@@ -1,0 +1,26 @@
+{{ partial "header.html" . }}
+
+<article class="post">
+    {{ if .Params.featuredImage }}
+    <figure class="featured-image">
+        <img src="{{ .Params.featuredImage }}" alt="" />
+    </figure>
+    {{ end }}
+    
+    <header class="entry-header">
+            {{ partial "categories.html" .}}
+        <h1 class="entry-title">{{ .Title }}</h1>
+        <h2 class="widget-title">{{ .Description }}</h2>
+    </header>
+    <div class="entry-meta">
+        {{ partial "meta.html" .}}
+    </div>
+    <div class="entry-content">
+        {{ .Content }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "tags.html" .}}
+    </footer><!-- .entry-footer -->
+</article>
+
+{{ partial "footer.html" . }}

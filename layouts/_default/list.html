@@ -1,0 +1,27 @@
+{{ partial "header.html" . }}
+
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+
+    {{ if $paginator.HasPrev }}
+    <nav class="navigation posts-navigation nav-next" role="navigation">
+        <h2 class="screen-reader-text">{{i18n "posts_navigation"}}</h2>
+        <div class="nav-links">
+            <a href="{{ $paginator.Prev.URL }}">{{i18n "newer_posts"}}</a>
+        </div>
+    </nav>
+    {{ end }}
+
+    {{ range $paginator.Pages }}
+        {{ .Render "archive" }}
+    {{ end }}
+
+    {{ if $paginator.HasNext }}
+    <nav class="navigation posts-navigation nav-previous" role="navigation">
+        <h2 class="screen-reader-text">{{i18n "posts_navigation"}}</h2>
+        <div class="nav-links">
+            <a href="{{ $paginator.Next.URL }}">{{i18n "older_posts"}}</a>
+        </div>
+    </nav>
+    {{ end }}
+
+{{ partial "footer.html" . }}

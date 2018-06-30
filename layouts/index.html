@@ -1,0 +1,14 @@
+{{ partial "header.html" . }}
+
+  {{ $posts := or .Site.Params.PostSummariesFrontPage 4 }}
+  {{ range first $posts (where .Data.Pages "Type" "post") }}
+      {{ .Render "summary"}}
+  {{ end }}  
+
+  <nav class="navigation posts-navigation nav-previous" role="navigation">
+    <h2 class="screen-reader-text">{{ i18n "posts_navigation" }}</h2>
+    <div class="nav-links">
+        <a href="{{ .Site.BaseURL }}/articles/">{{ i18n "all_articles" }}</a>
+    </div>
+  </nav>
+{{ partial "footer.html" . }}
