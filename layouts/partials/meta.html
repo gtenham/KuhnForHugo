@@ -1,6 +1,6 @@
 {{ if .IsPage }}
 <span class="byline">{{ i18n "written_by" }} 
-    <span class="author vcard"><a href="#" class="url fn n">{{ .Params.Author }}</a></span>
+    <span class="author vcard"><a href="#" class="url fn n">{{ if .Params.authors }}{{ .Params.authors }}{{ else if .Site.Params.Author }}{{.Site.Params.Author}}{{ end }}</a></span>
 </span>
 {{ end }}
 <span class="posted-on">{{ i18n "published" }} 

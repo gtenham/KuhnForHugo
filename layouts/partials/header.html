@@ -17,13 +17,21 @@
 	
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	
-	<link href="{{ .Site.BaseURL }}/css/base.css" rel="stylesheet">
+	<link href="{{ .Site.BaseURL }}css/base.css" rel="stylesheet">
+	{{ if .Site.Params.customCssPath }}
+	<link href="{{ .Site.BaseURL }}{{.Site.Params.customCssPath}}" rel="stylesheet">
+	{{ end }}
 </head>
 <body {{ if not .IsPage }}class="archive-view"{{ end }}>
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#main">{{ i18n "skip_to_content" }}</a>
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-branding">
+				{{ if .Site.Params.logo }}
+				<a href="{{ .Site.BaseURL }}" class="custom-logo-link" rel="home">
+					<img src="{{.Site.Params.logo}}" alt="{{ .Site.Title }}" />
+				</a>
+				{{ end }}
 				{{ if not .IsPage }}
 				<h1 class="site-title"><a rel="home" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
 				{{ else }}
