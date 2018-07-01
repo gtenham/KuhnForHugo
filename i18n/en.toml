@@ -1,3 +1,5 @@
+[date_format]
+other = "Jan 2, 2006"
 [all_articles]
 other = "All Articles"
 [posts_navigation]

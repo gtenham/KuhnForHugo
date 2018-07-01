@@ -8,9 +8,9 @@
   <nav class="navigation posts-navigation nav-previous" role="navigation">
     <h2 class="screen-reader-text">{{ i18n "posts_navigation" }}</h2>
     <div class="nav-links">
-        {{.Scratch.Get "sectionPath"}}
+        
         {{ range first 1 (where .Data.Pages "Type" "post") }}
-        <a href="{{ .Site.BaseURL }}/{{ .Section }}/">{{ i18n "all_articles" }}</a>
+        <a href="{{ .Site.BaseURL }}{{ .Section }}/">{{ i18n "all_articles" }}</a>
         {{ end }}
     </div>
   </nav>

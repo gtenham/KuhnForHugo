@@ -4,7 +4,18 @@
 </span>
 {{ end }}
 <span class="posted-on">{{ i18n "published" }} 
-    <a href="#" rel="bookmark">{{ dateFormat (.Site.Params.DateForm | default "Mon, Jan 2, 2006") .Date }}</a>
+    <a href="#" rel="bookmark">
+        <time class="entry-date published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+            
+            {{ .Scratch.Set "shortMonthFormat" (i18n "date_format") }}
+            {{ range where (where $.Site.Data.i18n_months.i18n.month "index" (printf "%d" .Date.Month))  "lang" $.Site.Language.Lang  }}
+                {{ $.Scratch.Set "shortMonthFormat" (i18n "date_format" .short) }}
+            {{end}}
+            
+            {{ $dateFormat := $.Scratch.Get "shortMonthFormat" }}
+            {{ dateFormat ($dateFormat) .Date }}
+        </time>
+    </a>
 </span>
 <span class="article-reading-time">
     {{.ReadingTime}} {{ i18n "min_read" }} 

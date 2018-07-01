@@ -1,0 +1,22 @@
+[date_format]
+other = "2 {{ .Count }} 2006"
+[all_articles]
+other = "Alle artikelen"
+[posts_navigation]
+other = "Posts navigatie"
+[skip_to_content]
+other = "Direct naar inhoud"
+[written_by]
+other = "Auteur"
+[published]
+other = "Gepubliceerd"
+[min_read]
+other = "min. leestijd"
+[tagged]
+other = "Tags"
+[goto]
+other = "Ga naar"
+[newer_posts]
+other = "Nieuwere Posts"
+[older_posts]
+other = "Oudere Posts"

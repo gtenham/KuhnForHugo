@@ -1,0 +1,60 @@
+[[i18n.month]]
+lang = "nl"
+index = "1"
+short = "jan"
+long = "januari"
+[[i18n.month]]
+lang = "nl"
+index = "2"
+short = "feb"
+long = "februari"
+[[i18n.month]]
+lang = "nl"
+index = "3"
+short = "mrt"
+long = "maart"
+[[i18n.month]]
+lang = "nl"
+index = "4"
+short = "apr"
+long = "april"
+[[i18n.month]]
+lang = "nl"
+index = "5"
+short = "mei"
+long = "mei"
+[[i18n.month]]
+lang = "nl"
+index = "6"
+short = "jun"
+long = "juni"
+[[i18n.month]]
+lang = "nl"
+index = "7"
+short = "jul"
+long = "juli"
+[[i18n.month]]
+lang = "nl"
+index = "8"
+short = "aug"
+long = "augustus"
+[[i18n.month]]
+lang = "nl"
+index = "9"
+short = "sept"
+long = "september"
+[[i18n.month]]
+lang = "nl"
+index = "10"
+short = "okt"
+long = "oktober"
+[[i18n.month]]
+lang = "nl"
+index = "11"
+short = "nov"
+long = "november"
+[[i18n.month]]
+lang = "nl"
+index = "12"
+short = "dec"
+long = "december"
